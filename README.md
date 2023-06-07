@@ -1,5 +1,5 @@
 # Tech Tribe Final Project
-Joshua Cannon, Renautis Patterson, Carl Sanders, Kaydee Kelley, Jay Boyd
+Joshua Cannon, Renautis Patterson, Carl Sanders, Kaydee Kelly, Jay Boyd
 ## Strengths & Weaknesses
 ### Joshua
 * Strength: EVERYTHING (Front end, back end, ideas, applying said ideas)
