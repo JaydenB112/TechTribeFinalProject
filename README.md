@@ -6,7 +6,6 @@ Joshua Cannon, Renautis Patterson, Carl Sanders, Kaydee Kelley, Jay Boyd
 * Weakness: Design
 
 ### Renautis
-
 * Strength: Front end, design
  * Weakness: Back end
 ### Carl
