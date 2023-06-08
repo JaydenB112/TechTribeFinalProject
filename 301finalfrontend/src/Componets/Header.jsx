@@ -6,8 +6,8 @@ function Header() {
     <>
       <AppBar>
     <h1>Tournament Bracket Maker</h1>
-        <ButtonGroup>
-        <Button variant="text">
+        <ButtonGroup variant="text" aria-label="text button group">
+        <Button>
           <Link to="/" className="nav-link">Home</Link>
         </Button>
         <Button>
