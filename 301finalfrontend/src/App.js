@@ -11,15 +11,14 @@ function App() {
     <div className="App">
       
       <Router>
-        <Header>
+        <Header/>
           <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='/profile' element={<Profile/>} />
             <Route path='/tournament-bracket' element={<TournamentBracket/>} />
           </Routes>
-        </Header>
+        <Footer/>
       </Router>
-      <Footer/>
     </div>
   );
 }

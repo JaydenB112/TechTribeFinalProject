@@ -1,12 +1,12 @@
-import { AppBar, Button,ButtonGroup  } from "@mui/material";
+import {  Button,ButtonGroup  } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <>
-      <AppBar>
+      <nav>
     <h1>Tournament Bracket Maker</h1>
-        <ButtonGroup variant="text" aria-label="text button group">
+        <ButtonGroup>
         <Button>
           <Link to="/" className="nav-link">Home</Link>
         </Button>
@@ -17,8 +17,7 @@ function Header() {
           <Link to="/profile" className="nav-link">Profile</Link>
         </Button>
         </ButtonGroup>
-      </AppBar>
-      <br/>
+      </nav>
     </>
   );
 }
