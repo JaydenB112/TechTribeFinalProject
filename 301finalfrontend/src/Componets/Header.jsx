@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
+    <>
       <AppBar>
+    <h1>Tournament Bracket Maker</h1>
         <ButtonGroup>
         <Button variant="text">
           <Link to="/" className="nav-link">Home</Link>
@@ -16,6 +18,8 @@ function Header() {
         </Button>
         </ButtonGroup>
       </AppBar>
+      <br/>
+    </>
   );
 }
 
