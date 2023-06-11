@@ -1,7 +1,7 @@
-import { Button, ButtonGroup } from "@mui/material";
-import { Bracket, RoundProps } from 'react-brackets';
-import React from 'react';
 
+import { Button, ButtonGroup } from "@mui/material";
+//import { Bracket, RoundProps } from 'react-brackets';
+import TournamentForm from "./TournamentForm";
 
 
 function TournamentBracket() {
@@ -9,7 +9,7 @@ function TournamentBracket() {
     <div>
       <p>Tournament</p>
       <ButtonGroup variant="contained">
-        <Button color="success"> make tournament</Button>
+        <TournamentForm/>
         <Button>remake tournament</Button>
         <Button color="error">clear tournament</Button>
       </ButtonGroup>
