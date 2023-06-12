@@ -1,7 +1,9 @@
+
+
 function BrackDisplay() {
     return ( 
         <>
-        
+        <p>hi</p>
         </>
      );
 }
