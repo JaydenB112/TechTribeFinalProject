@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Componets/Header';
 import Home from './Componets/Home';
 import Profile from './Componets/Profile';
