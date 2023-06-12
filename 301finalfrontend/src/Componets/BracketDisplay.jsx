@@ -1,3 +1,5 @@
+import Rounds from "./Brack/Rounds";
+
 function BrackDisplay({ submittedData }) {
     if (!submittedData) {
       return null;
