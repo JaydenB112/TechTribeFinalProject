@@ -14,6 +14,7 @@ function TournamentBracket() {
         <Button>remake tournament</Button>
         <Button color="error">clear tournament</Button>
       </ButtonGroup>
+      <BrackDisplay/>
     </div>
   );
 }
