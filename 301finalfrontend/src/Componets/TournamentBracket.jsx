@@ -1,6 +1,4 @@
-
 import { Button, ButtonGroup } from "@mui/material";
-//import { Bracket, RoundProps } from 'react-brackets';
 import TournamentForm from "./TournamentForm";
 import BrackDisplay from "./BracketDisplay";
 
