@@ -67,7 +67,7 @@ function TournamentForm() {
               value={tournamentName}
               onChange={(e) => setTournamentName(e.target.value)}
             />
-            <br />
+            <br/>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">
                 number of competitors
@@ -82,9 +82,18 @@ function TournamentForm() {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
+                <MenuItem value={6}>6</MenuItem>
                 <MenuItem value={8}>8</MenuItem>
                 <MenuItem value={10}>10</MenuItem>
+                <MenuItem value={12}>12</MenuItem>
+                <MenuItem value={14}>14</MenuItem>
+                <MenuItem value={16}>16</MenuItem>
+                <MenuItem value={18}>18</MenuItem>
                 <MenuItem value={20}>20</MenuItem>
+                <MenuItem value={22}>12</MenuItem>
+                <MenuItem value={24}>14</MenuItem>
+                <MenuItem value={26}>16</MenuItem>
+                <MenuItem value={28}>18</MenuItem>
                 <MenuItem value={40}>40</MenuItem>
               </Select>
             </FormControl>
@@ -96,25 +105,29 @@ function TournamentForm() {
               value={competitorName}
               onChange={(e) => setCompetitorName(e.target.value)}
             />
+            <br/>
             <Button type="button" onClick={handleAddCompetitor}>
               add competitor
             </Button>
-            <ul>
+            <br/>
+            <ol>
               <h3>Tournament Roster</h3>
               {competitorsList.map((name, index) => (
                 <li key={index}>{name}</li>
               ))}
-            </ul>
-            <ul>
+            </ol>
+            <br/>
+            <ol>
               <h3>Roster Competitor Replacement</h3>
               {replacementList.map((name, index) => (
                 <li key={index}>{name}</li>
               ))}
-            </ul>
+            </ol>
             <br />
             <FormControlLabel control={<Switch />} label="double elimination" />
-            <br />
+            <br/>
             <Button type="submit">Submit</Button>
+            <br/>
           </FormControl>
         </form>
       </Modal>
