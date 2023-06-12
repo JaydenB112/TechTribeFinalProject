@@ -1,18 +1,16 @@
-import { Button, ButtonGroup } from "@mui/material";
+// import { Button, ButtonGroup } from "@mui/material";
 import TournamentForm from "./TournamentForm";
-import BrackDisplay from "./BracketDisplay";
 
 
 function TournamentBracket() {
   return (
     <div>
       <p>Tournament</p>
-      <ButtonGroup variant="contained">
-        <TournamentForm/>
+      {/* <ButtonGroup variant="contained">
         <Button>remake tournament</Button>
         <Button color="error">clear tournament</Button>
-      </ButtonGroup>
-      <BrackDisplay/>
+      </ButtonGroup> */}
+        <TournamentForm/>
     </div>
   );
 }

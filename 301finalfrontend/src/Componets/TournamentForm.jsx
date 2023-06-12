@@ -10,6 +10,8 @@ import {
   Select,
   InputLabel,
 } from "@mui/material";
+import BrackDisplay from "./BracketDisplay";
+
 
 function TournamentForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,6 +19,8 @@ function TournamentForm() {
   const [maxCompetitors, setMaxCompetitors] = useState("");
   const [competitorName, setCompetitorName] = useState("");
   const [competitorsList, setCompetitorsList] = useState([]);
+  const [submittedData, setSubmittedData] = useState(null);
+
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -28,9 +32,15 @@ function TournamentForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("Form submitted!");
+    const data = {
+      tournamentName,
+      competitorsList,
+      replacementList,
+    };
+    setSubmittedData(data);
+    handleCloseModal();
   };
-
+  
   const handleAddCompetitor = () => {
     if (competitorName.trim() !== "") {
       if (competitorsList.length >= maxCompetitors) {
@@ -52,7 +62,7 @@ function TournamentForm() {
 
   return (
     <>
-      <Button color="success" onClick={handleOpenModal}>
+      <Button variant="contained" color="success" onClick={handleOpenModal}>
         make tournament
       </Button>
 
@@ -106,7 +116,7 @@ function TournamentForm() {
               onChange={(e) => setCompetitorName(e.target.value)}
             />
             <br/>
-            <Button type="button" onClick={handleAddCompetitor}>
+            <Button variant="contained" type="button" onClick={handleAddCompetitor}>
               add competitor
             </Button>
             <br/>
@@ -126,11 +136,12 @@ function TournamentForm() {
             <br />
             <FormControlLabel control={<Switch />} label="double elimination" />
             <br/>
-            <Button type="submit">Submit</Button>
+            <Button variant="contained" type="submit">Submit</Button>
             <br/>
           </FormControl>
         </form>
       </Modal>
+      <BrackDisplay submittedData={submittedData} />
     </>
   );
 }
