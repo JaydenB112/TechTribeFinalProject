@@ -66,7 +66,7 @@ function TournamentForm() {
         make tournament
       </Button>
 
-      <Modal open={isModalOpen} onClose={handleCloseModal} fullWidth>
+      <Modal open={isModalOpen} onClose={handleCloseModal}>
         <form className="form-container" onSubmit={handleSubmit}>
           <FormControl>
             <h2>Tournament Form</h2>
@@ -78,7 +78,7 @@ function TournamentForm() {
               onChange={(e) => setTournamentName(e.target.value)}
             />
             <br/>
-            <FormControl fullWidth>
+            <FormControl>
               <InputLabel id="demo-simple-select-label">
                 number of competitors
               </InputLabel>
@@ -92,19 +92,11 @@ function TournamentForm() {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={6}>6</MenuItem>
+                <MenuItem value={4}>4</MenuItem>
                 <MenuItem value={8}>8</MenuItem>
-                <MenuItem value={10}>10</MenuItem>
-                <MenuItem value={12}>12</MenuItem>
-                <MenuItem value={14}>14</MenuItem>
                 <MenuItem value={16}>16</MenuItem>
-                <MenuItem value={18}>18</MenuItem>
-                <MenuItem value={20}>20</MenuItem>
-                <MenuItem value={22}>12</MenuItem>
-                <MenuItem value={24}>14</MenuItem>
-                <MenuItem value={26}>16</MenuItem>
-                <MenuItem value={28}>18</MenuItem>
-                <MenuItem value={40}>40</MenuItem>
+                <MenuItem value={32}>32</MenuItem>
+                <MenuItem value={64}>64</MenuItem>
               </Select>
             </FormControl>
             <br />

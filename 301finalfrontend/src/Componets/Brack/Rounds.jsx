@@ -1,9 +1,9 @@
 import Match from "./Match";
 
-function Rounds() {
+function Rounds(tournamentList) {
     return (  
         <>
-        
+        <Match tournamentList={tournamentList}/>
         </>
     );
 }
