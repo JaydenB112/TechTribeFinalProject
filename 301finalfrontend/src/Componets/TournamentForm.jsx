@@ -10,10 +10,10 @@ import {
   Select,
   InputLabel,
 } from "@mui/material";
-import BrackDisplay from "./BracketDisplay";
+// import BrackDisplay from "./BracketDisplay";
 
 
-function TournamentForm() {
+function TournamentForm({setPlayers}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tournamentName, setTournamentName] = useState("");
   const [maxCompetitors, setMaxCompetitors] = useState("");
@@ -37,8 +37,13 @@ function TournamentForm() {
       competitorsList,
       replacementList,
     };
+    const newPlayerList = competitorsList.map((playerName, i) => {
+      return {name: playerName, round: 0, position: i}
+    })
+
     setSubmittedData(data);
     handleCloseModal();
+    setPlayers(newPlayerList)
   };
   
   const handleAddCompetitor = () => {
@@ -133,7 +138,7 @@ function TournamentForm() {
           </FormControl>
         </form>
       </Modal>
-      <BrackDisplay submittedData={submittedData} />
+      {/* <BrackDisplay submittedData={submittedData} /> */}
     </>
   );
 }
