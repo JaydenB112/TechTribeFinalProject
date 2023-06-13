@@ -1,0 +1,34 @@
+/* this section is for My Tournaments */
+.createdTournContainer {
+    border: 3px solid rgb(42, 55, 197);
+}
+
+/* this section is for Upcoming Tournaments */
+/* .upcomingTournContainer {
+    border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+} */
+
+.p_TournAlign {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upcomingTourn_List {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.p_TournData {
+    margin-right: 10px;
+}
+
+/* this section is for Past Tournaments */
+.pastTournContainer{
+    border: 3px solid rgb(40, 157, 30);
+}

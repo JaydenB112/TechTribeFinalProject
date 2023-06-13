@@ -1,8 +1,8 @@
 function PastTournaments() {
     return (
-        <>
+        <div className="pastTournContainer">
             {/*HTML CODE GOES IN HERE :> -KD  */}
-            <h2 className="p_TournTitle">My Tournaments</h2>
+            <h2 className="p_TournTitle">Past Tournaments</h2>
             <div className="p_TournAlign">
                 <div className="pastTourn_Name">
                     <li className="p_TournData"> pastData_Name </li>
@@ -20,7 +20,7 @@ function PastTournaments() {
                 </div>
             </div>
 
-        </>
+        </div>
     );
 }
 

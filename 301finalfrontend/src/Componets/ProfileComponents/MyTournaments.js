@@ -1,6 +1,8 @@
+import "./Tourn.css"; // Import the CSS file
+
 function MyTournaments() {
     return (
-        <>
+        <div className="createdTournContainer">
             {/*HTML CODE GOES IN HERE :> -KD  */}
             <h2 className="p_TournTitle">My Tournaments</h2>
             <div className="p_TournAlign">
@@ -20,7 +22,7 @@ function MyTournaments() {
                 </div>
             </div>
 
-        </>
+        </div>
     );
 }
 

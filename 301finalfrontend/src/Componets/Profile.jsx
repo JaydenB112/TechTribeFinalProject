@@ -1,12 +1,12 @@
-import MyTournaments from "./ProfileComponents/MyTournaments";
-import PastTournaments from "./ProfileComponents/PastTournaments";
-import UpComingTournaments from "./ProfileComponents/UpcomingTournaments";
 import UserProfile from "./ProfileComponents/UserProfile";
-// The components listed above this comment contain the elements for the profile! :> -KD
+import MyTournaments from "./ProfileComponents/MyTournaments";
+import UpComingTournaments from "./ProfileComponents/UpcomingTournaments";
+import PastTournaments from "./ProfileComponents/PastTournaments";
+import "./Profile.css"; // Import the CSS file
 
 function Profile() {
   return (
-    <div>
+    <div className="profile-container">
       <p>profile</p>
       {/* Import all the cool KD components here :) */}
       {/* Component for UserProfile */}

@@ -1,0 +1,17 @@
+.createdTournContainer{
+  border: 3px;
+  border-style: solid;
+  border-color: rgb(42, 55, 197);
+}
+
+/* .upcomingTournContainer{
+  border: 3px;
+  border-style: solid;
+  border-color: red;
+} */
+
+.pastTournContainer{
+  border: 3px;
+  border-style: solid;
+  border-color: rgb(40, 157, 30);
+}
