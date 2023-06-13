@@ -10,6 +10,8 @@ import {
   Select,
   InputLabel,
 } from "@mui/material";
+import BrackDisplay from "./BracketDisplay";
+
 
 function TournamentForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,6 +19,8 @@ function TournamentForm() {
   const [maxCompetitors, setMaxCompetitors] = useState("");
   const [competitorName, setCompetitorName] = useState("");
   const [competitorsList, setCompetitorsList] = useState([]);
+  const [submittedData, setSubmittedData] = useState(null);
+
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -28,9 +32,15 @@ function TournamentForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("Form submitted!");
+    const data = {
+      tournamentName,
+      competitorsList,
+      replacementList,
+    };
+    setSubmittedData(data);
+    handleCloseModal();
   };
-
+  
   const handleAddCompetitor = () => {
     if (competitorName.trim() !== "") {
       if (competitorsList.length >= maxCompetitors) {
@@ -52,11 +62,11 @@ function TournamentForm() {
 
   return (
     <>
-      <Button color="success" onClick={handleOpenModal}>
+      <Button variant="contained" color="success" onClick={handleOpenModal}>
         make tournament
       </Button>
 
-      <Modal open={isModalOpen} onClose={handleCloseModal} fullWidth>
+      <Modal open={isModalOpen} onClose={handleCloseModal}>
         <form className="form-container" onSubmit={handleSubmit}>
           <FormControl>
             <h2>Tournament Form</h2>
@@ -67,8 +77,8 @@ function TournamentForm() {
               value={tournamentName}
               onChange={(e) => setTournamentName(e.target.value)}
             />
-            <br />
-            <FormControl fullWidth>
+            <br/>
+            <FormControl>
               <InputLabel id="demo-simple-select-label">
                 number of competitors
               </InputLabel>
@@ -82,10 +92,11 @@ function TournamentForm() {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
+                <MenuItem value={4}>4</MenuItem>
                 <MenuItem value={8}>8</MenuItem>
-                <MenuItem value={10}>10</MenuItem>
-                <MenuItem value={20}>20</MenuItem>
-                <MenuItem value={40}>40</MenuItem>
+                <MenuItem value={16}>16</MenuItem>
+                <MenuItem value={32}>32</MenuItem>
+                <MenuItem value={64}>64</MenuItem>
               </Select>
             </FormControl>
             <br />
@@ -96,28 +107,33 @@ function TournamentForm() {
               value={competitorName}
               onChange={(e) => setCompetitorName(e.target.value)}
             />
-            <Button type="button" onClick={handleAddCompetitor}>
+            <br/>
+            <Button variant="contained" type="button" onClick={handleAddCompetitor}>
               add competitor
             </Button>
-            <ul>
+            <br/>
+            <ol>
               <h3>Tournament Roster</h3>
               {competitorsList.map((name, index) => (
                 <li key={index}>{name}</li>
               ))}
-            </ul>
-            <ul>
+            </ol>
+            <br/>
+            <ol>
               <h3>Roster Competitor Replacement</h3>
               {replacementList.map((name, index) => (
                 <li key={index}>{name}</li>
               ))}
-            </ul>
+            </ol>
             <br />
             <FormControlLabel control={<Switch />} label="double elimination" />
-            <br />
-            <Button type="submit">Submit</Button>
+            <br/>
+            <Button variant="contained" type="submit">Submit</Button>
+            <br/>
           </FormControl>
         </form>
       </Modal>
+      <BrackDisplay submittedData={submittedData} />
     </>
   );
 }
