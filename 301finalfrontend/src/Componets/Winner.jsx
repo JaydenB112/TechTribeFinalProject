@@ -1,6 +1,10 @@
-const Winner = () => {
+const Winner = ({winner}) => {
   return (
-    <input type="text" />
+    <>
+    <div className='position mb-2'>
+      <input type='text' value={winner} disabled/>
+    </div>
+  </>
   )
 }
 

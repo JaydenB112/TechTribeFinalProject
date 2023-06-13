@@ -1,23 +1,31 @@
 // import { Button, ButtonGroup } from "@mui/material";
 import { useState } from "react";
-import Winner from "./winner";
+import Winner from "./Winner";
 import TournamentForm from "./TournamentForm";
 import Rounds from "./Brack/Rounds";
 import { Container, Col, Row } from "react-bootstrap";
 
 function TournamentBracket() {
   const [winner, setWinner] = useState("");
-
-  const [players, setPlayers] = useState([
-    { name: "Player 1", round: 0, position: 0 },
-    { name: "Player 2", round: 0, position: 1 },
-    { name: "Player 3", round: 0, position: 2 },
-    { name: "Player 4", round: 0, position: 3 },
-    { name: "Player 5", round: 0, position: 4 },
-    { name: "Player 6", round: 0, position: 5 },
-    { name: "Player 7", round: 0, position: 6 },
-    { name: "Player 8", round: 0, position: 7 },
-  ]);
+  const [players, setPlayers] = useState([]);
+  // const [players, setPlayers] = useState([
+  //   { name: "Player 1", round: 0, position: 0 },
+  //   { name: "Player 2", round: 0, position: 1 },
+  //   { name: "Player 3", round: 0, position: 2 },
+  //   { name: "Player 4", round: 0, position: 3 },
+  //   { name: "Player 5", round: 0, position: 4 },
+  //   { name: "Player 6", round: 0, position: 5 },
+  //   { name: "Player 7", round: 0, position: 6 },
+  //   { name: "Player 8", round: 0, position: 7 },
+  //   { name: "Player 9", round: 0, position: 8 },
+  //   { name: "Player 10", round: 0, position: 9 },
+  //   { name: "Player 11", round: 0, position: 10 },
+  //   { name: "Player 12", round: 0, position: 11 },
+  //   { name: "Player 13", round: 0, position: 12 },
+  //   { name: "Player 14", round: 0, position: 13 },
+  //   { name: "Player 15", round: 0, position: 14 },
+  //   { name: "Player 16", round: 0, position: 15 },
+  // ]);
   let numberOfPlayers = players.length;
   let numberOfRounds = Math.log2(numberOfPlayers);
   let rounds = [];
@@ -87,22 +95,27 @@ function TournamentBracket() {
         <Button>remake tournament</Button>
         <Button color="error">clear tournament</Button>
       </ButtonGroup> */}
-      <Container>
-        <Row>
-          <Col>
-            <h1 className='mb-4'>Tournament</h1>
-          </Col>
-        </Row>
-        <Row>
-          {rounds.map((round) => {
-            return <Col>{round}</Col>;
-          })}
-          <Col>
-            {winner ? <Winner winner={winner} /> : <Winner winner='' />}
-          </Col>
-        </Row>
-      </Container>
-      <TournamentForm />
+      {players.length > 0 ? (
+        <Container>
+          <Row>
+            <Col>
+              <h1 className='mb-4'>Tournament</h1>
+            </Col>
+          </Row>
+          <Row>
+            {rounds.map((round) => {
+              return <Col>{round}</Col>;
+            })}
+            <Col>
+              {winner ? <Winner winner={winner} /> : <Winner winner='' />}
+            </Col>
+          </Row>
+        </Container>
+      ) : (
+        <div></div>
+      )}
+      
+      <TournamentForm setPlayers={setPlayers} />
     </div>
   );
 }
