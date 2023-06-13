@@ -15,6 +15,9 @@ function Header() {
         </Button>
         <Button>
           <Link to="/profile" className="nav-link">Profile</Link>
+        </Button>        
+        <Button>
+          <Link to="/about" className="nav-link">About</Link>
         </Button>
         </ButtonGroup>
       </nav>
