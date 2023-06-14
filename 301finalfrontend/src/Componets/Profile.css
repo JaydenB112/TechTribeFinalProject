@@ -1,6 +1,7 @@
 .profile-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
   margin-top: 20px;
 }
 
@@ -30,20 +31,10 @@ body {
   margin-right: 20px; /* Add some spacing between the child elements */
 }
 
-.profile-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+.profile-section {
+  order: 2; /* Change the order to stack below */
 }
 
-.white-box {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.white-box + .white-box {
-  margin-left: 30px; /* Add margin to the left of the second white box */
+.tournaments-section {
+  order: 1; /* Change the order to stack above */
 }
