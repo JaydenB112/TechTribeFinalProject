@@ -1,16 +1,3 @@
-// import Match from "./Match";
-
-// function Rounds(tournamentList) {
-//     return (  
-//         <>
-        
-//         <Match tournamentList={tournamentList}/>
-//         </>
-//     );
-// }
-
-// export default Rounds;
-
 import Match from "./Match";
 const Rounds = ({ numOfMatches, players, round, advancePlayer, retreatPlayer }) => {
   let matches = [];
@@ -35,3 +22,17 @@ const Rounds = ({ numOfMatches, players, round, advancePlayer, retreatPlayer }) 
 };
 
 export default Rounds;
+
+// import Match from "./Match";
+
+// function Rounds(tournamentList) {
+//     return (  
+//         <>
+        
+//         <Match tournamentList={tournamentList}/>
+//         </>
+//     );
+// }
+
+// export default Rounds;
+
