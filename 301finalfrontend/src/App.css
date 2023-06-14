@@ -15,3 +15,14 @@
   border: 2px solid #000;
   box-shadow: 24px;
 }
+
+.list-container {
+  height: 150px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+
+.scrollable-list {
+  padding-left: 20px;
+  list-style: none;
+  margin: 0;
+}

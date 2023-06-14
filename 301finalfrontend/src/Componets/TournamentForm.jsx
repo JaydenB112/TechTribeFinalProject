@@ -117,19 +117,23 @@ function TournamentForm({setPlayers}) {
               add competitor
             </Button>
             <br/>
-            <ol>
-              <h3>Tournament Roster</h3>
-              {competitorsList.map((name, index) => (
-                <li key={index}>{name}</li>
-              ))}
-            </ol>
-            <br/>
-            <ol>
-              <h3>Roster Competitor Replacement</h3>
-              {replacementList.map((name, index) => (
-                <li key={index}>{name}</li>
-              ))}
-            </ol>
+            <div className="list-container">
+              <ol className="scrollable-list">
+                <h3>Tournament Roster</h3>
+                {competitorsList.map((name, index) => (
+                  <li key={index}>{name}</li>
+                ))}
+              </ol>
+            </div>
+            <br />
+            <div className="list-container">
+              <ol className="scrollable-list">
+                <h3>Roster Competitor Replacement</h3>
+                {replacementList.map((name, index) => (
+                  <li key={index}>{name}</li>
+                ))}
+              </ol>
+            </div>
             <br />
             <FormControlLabel control={<Switch />} label="double elimination" />
             <br/>
