@@ -5,6 +5,7 @@ import Profile from './Componets/Profile';
 import TournamentBracket from './Componets/TournamentBracket';
 import Footer from './Componets/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
