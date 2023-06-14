@@ -8,15 +8,18 @@ function Header() {
       <nav>
         <h1 className="font-unbounded">Tournament Bracket Maker</h1>
         <ButtonGroup>
-          <Button>
-            <Link to="/" className="nav-link">Home</Link>
-          </Button>
-          <Button>
-            <Link to="/tournament-bracket" className="nav-link">Tournament Bracket</Link>
-          </Button>
-          <Button>
-            <Link to="/profile" className="nav-link">Profile</Link>
-          </Button>
+        <Button>
+          <Link to="/" className="nav-link">Home</Link>
+        </Button>
+        <Button>
+          <Link to="/tournament-bracket" className="nav-link">Tournament Bracket</Link>
+        </Button>
+        <Button>
+          <Link to="/profile" className="nav-link">Profile</Link>
+        </Button>        
+        <Button>
+          <Link to="/about" className="nav-link">About</Link>
+        </Button>
         </ButtonGroup>
       </nav>
     </>

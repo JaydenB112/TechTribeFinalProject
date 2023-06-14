@@ -21,4 +21,6 @@ const Rounds = ({ numOfMatches, players, round, advancePlayer, retreatPlayer }) 
   );
 };
 
+
 export default Rounds;
+

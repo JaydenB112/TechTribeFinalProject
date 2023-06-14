@@ -1,4 +1,5 @@
 const Winner = ({winner}) => {
+
   return (
     <>
     <div className='position mb-2'>
@@ -9,3 +10,4 @@ const Winner = ({winner}) => {
 }
 
 export default Winner
+
