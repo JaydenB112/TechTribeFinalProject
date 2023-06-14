@@ -8,17 +8,15 @@ import {
   Select,
   InputLabel,
 } from "@mui/material";
-// import BrackDisplay from "./BracketDisplay";
 
-
-function TournamentForm({setPlayers}) {
+function TournamentForm({ setPlayers }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tournamentName, setTournamentName] = useState("");
   const [maxCompetitors, setMaxCompetitors] = useState("");
   const [competitorName, setCompetitorName] = useState("");
   const [competitorsList, setCompetitorsList] = useState([]);
   const [submittedData, setSubmittedData] = useState(null);
-
+  const [replacementList, setReplacementList] = useState([]);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -28,29 +26,50 @@ function TournamentForm({setPlayers}) {
     setIsModalOpen(false);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = {
       tournamentName,
       competitorsList,
       replacementList,
+      winner: "your_winner_value_here", // Replace with the actual winner value
     };
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/boards`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // Handle successful response
+        console.log("Data sent to server successfully!");
+      } else {
+        // Handle error response
+        console.error("Error sending data to server:", response.statusText);
+      }
+    } catch (error) {
+      // Handle network error
+      console.error("Error sending data to server:", error.message);
+    }
+
     const newPlayerList = competitorsList.map((playerName, i) => {
-      return {name: playerName, round: 0, position: i}
-    })
+      return { name: playerName, round: 0, position: i };
+    });
 
     setSubmittedData(data);
     handleCloseModal();
-    setPlayers(newPlayerList)
+    setPlayers(newPlayerList);
   };
-  
+
   const handleAddCompetitor = () => {
     if (competitorName.trim() !== "") {
       if (competitorsList.length >= maxCompetitors) {
-        // Add the competitor to the replacement list if the roster is full
         setReplacementList([...replacementList, competitorName]);
       } else {
-        // Add the competitor to the roster list if there is still space
         setCompetitorsList([...competitorsList, competitorName]);
       }
       setCompetitorName("");
@@ -60,8 +79,6 @@ function TournamentForm({setPlayers}) {
   const handleChange = (event) => {
     setMaxCompetitors(event.target.value);
   };
-
-  const [replacementList, setReplacementList] = useState([]);
 
   return (
     <>
@@ -138,7 +155,6 @@ function TournamentForm({setPlayers}) {
           </FormControl>
         </form>
       </Modal>
-      {/* <BrackDisplay submittedData={submittedData} /> */}
     </>
   );
 }
