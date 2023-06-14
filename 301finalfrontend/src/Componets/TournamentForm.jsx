@@ -3,9 +3,7 @@ import {
   Modal,
   Button,
   FormControl,
-  FormControlLabel,
   TextField,
-  Switch,
   MenuItem,
   Select,
   InputLabel,
@@ -135,8 +133,6 @@ function TournamentForm({setPlayers}) {
               </ol>
             </div>
             <br />
-            <FormControlLabel control={<Switch />} label="double elimination" />
-            <br/>
             <Button variant="contained" type="submit">Submit</Button>
             <br/>
           </FormControl>
