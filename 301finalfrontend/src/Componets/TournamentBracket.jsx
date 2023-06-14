@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import Winner from "./Winner";
 import TournamentForm from "./TournamentForm";
 import Rounds from "./Brack/Rounds";
-import { Container, Grid, Typography } from "@mui/material";
+
+import { Container, Col, Row } from "react-bootstrap";
 
 function TournamentBracket() {
   const [winner, setWinner] = useState("");
@@ -72,58 +74,36 @@ function TournamentBracket() {
   }
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Tournament
-      </Typography>
-
+    <div>
+      <p>Tournament</p>
+      {/* <ButtonGroup variant="contained">
+        <Button>remake tournament</Button>
+        <Button color="error">clear tournament</Button>
+      </ButtonGroup> */}
       {players.length > 0 ? (
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="h1" gutterBottom>
-              Tournament
-            </Typography>
-          </Grid>
-
-          <Grid container item xs={12} spacing={2}>
-            {rounds.map((round, index) => (
-              <Grid key={index} item xs={3}>
-                {round}
-              </Grid>
-            ))}
-
-            <Grid item xs={3}>
-              {winner ? <Winner winner={winner} /> : <Winner winner="" />}
-            </Grid>
-          </Grid>
-        </Grid>
+        <Container>
+          <Row>
+            <Col>
+              <h1 className='mb-4'>Tournament</h1>
+            </Col>
+          </Row>
+          <Row>
+            {rounds.map((round) => {
+              return <Col>{round}</Col>;
+            })}
+            <Col>
+              {winner ? <Winner winner={winner} /> : <Winner winner='' />}
+            </Col>
+          </Row>
+        </Container>
       ) : (
         <div></div>
       )}
-
+      
       <TournamentForm setPlayers={setPlayers} />
-    </Container>
+    </div>
   );
 }
 
 export default TournamentBracket;
-
-// // import { Button, ButtonGroup } from "@mui/material";
-// import TournamentForm from "./TournamentForm";
-
-
-// function TournamentBracket() {
-//   return (
-//     <div>
-//       <p>Tournament</p>
-//       {/* <ButtonGroup variant="contained">
-//         <Button>remake tournament</Button>
-//         <Button color="error">clear tournament</Button>
-//       </ButtonGroup> */}
-//         <TournamentForm/>
-//     </div>
-//   );
-// }
-
-// export default TournamentBracket;
 

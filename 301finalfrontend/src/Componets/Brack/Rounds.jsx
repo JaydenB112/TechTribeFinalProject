@@ -21,18 +21,6 @@ const Rounds = ({ numOfMatches, players, round, advancePlayer, retreatPlayer }) 
   );
 };
 
+
 export default Rounds;
-
-// import Match from "./Match";
-
-// function Rounds(tournamentList) {
-//     return (  
-//         <>
-        
-//         <Match tournamentList={tournamentList}/>
-//         </>
-//     );
-// }
-
-// export default Rounds;
 
