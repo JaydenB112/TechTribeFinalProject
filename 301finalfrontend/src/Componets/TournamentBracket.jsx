@@ -2,7 +2,7 @@ import { useState } from "react";
 import Winner from "./Winner";
 import TournamentForm from "./TournamentForm";
 import Rounds from "./Brack/Rounds";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Grid, Typography } from "@mui/material";
 
 function TournamentBracket() {
   const [winner, setWinner] = useState("");
@@ -58,6 +58,7 @@ function TournamentBracket() {
       return updatedPlayers;
     });
   };
+
   for (let i = 0; i < numberOfRounds; i++) {
     rounds.push(
       <Rounds
@@ -69,35 +70,39 @@ function TournamentBracket() {
       />
     );
   }
+
   return (
-    <div>
-      <p>Tournament</p>
-      {/* <ButtonGroup variant="contained">
-        <Button>remake tournament</Button>
-        <Button color="error">clear tournament</Button>
-      </ButtonGroup> */}
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Tournament
+      </Typography>
+
       {players.length > 0 ? (
-        <Container>
-          <Row>
-            <Col>
-              <h1 className='mb-4'>Tournament</h1>
-            </Col>
-          </Row>
-          <Row>
-            {rounds.map((round) => {
-              return <Col>{round}</Col>;
-            })}
-            <Col>
-              {winner ? <Winner winner={winner} /> : <Winner winner='' />}
-            </Col>
-          </Row>
-        </Container>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography variant="h1" gutterBottom>
+              Tournament
+            </Typography>
+          </Grid>
+
+          <Grid container item xs={12} spacing={2}>
+            {rounds.map((round, index) => (
+              <Grid key={index} item xs={3}>
+                {round}
+              </Grid>
+            ))}
+
+            <Grid item xs={3}>
+              {winner ? <Winner winner={winner} /> : <Winner winner="" />}
+            </Grid>
+          </Grid>
+        </Grid>
       ) : (
         <div></div>
       )}
-      
+
       <TournamentForm setPlayers={setPlayers} />
-    </div>
+    </Container>
   );
 }
 
