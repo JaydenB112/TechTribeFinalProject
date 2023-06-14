@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
-import { Button } from 'react-bootstrap';
-import { useAuth0 } from '@auth0/auth0-react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from "react-bootstrap";
+import { useAuth0 } from "@auth0/auth0-react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
     const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+    
 
   useEffect(() => {
     // Add any necessary initialization logic here
   }, []);
-
+console.log(isAuthenticated)
   return (
+
+     
     <div className="welcome-container">
       <header>
         <h1>Welcome</h1>
@@ -18,12 +21,20 @@ function Home() {
           <Button onClick={() => loginWithRedirect()}>Log In</Button>
         )}
         {isAuthenticated && (
-          <Button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</Button>
+          <Button onClick={() => logout({ returnTo: window.location.origin })}>
+            Log Out
+          </Button>
         )}
       </header>
     </div>
   );
 }
-    
+
+
+
+
+   
+  
+
 
 export default Home;
