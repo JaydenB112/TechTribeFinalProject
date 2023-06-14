@@ -12,6 +12,7 @@ function Footer() {
           fill="#D3D3D3" /* Set the fill color to light grey */
           width="24"
           height="24"
+          style={{ marginLeft: "10px"}} /* Add margin to the right side */
         >
           <path
             fillRule="evenodd"
@@ -24,3 +25,4 @@ function Footer() {
 }
 
 export default Footer;
+
