@@ -1,0 +1,13 @@
+.footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(71, 77, 87);
+    color: rgb(203, 198, 198); /* Add this line to set the font color */
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
