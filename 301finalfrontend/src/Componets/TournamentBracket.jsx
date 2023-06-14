@@ -1,13 +1,16 @@
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Winner from "./Winner";
 import TournamentForm from "./TournamentForm";
 import Rounds from "./Brack/Rounds";
 import { Container, Col, Row } from "react-bootstrap";
 
 function TournamentBracket() {
-  // make fetch request to get all players
-  const fetchPlayers = async () => {
+  const [winner, setWinner] = useState("");
+  const [players, setPlayers] = useState([]);
+  const [gameName, setGameName] = useState("");
+  const [tournamentChoices, setTournamentChoices] = useState([]);
+
+  const fetchTournament = async () => {
     const res = await fetch("https://ttbackend-29bg.onrender.com/boards");
     console.log(res);
     const data = await res.json();
@@ -18,17 +21,33 @@ function TournamentBracket() {
         round: 0,
         originalPosition: i,
       };
-    }
+    });
+    setPlayers(playerObjects);
+    setGameName(data[1].gameName);
+  };
+
+  const handleChooseTournament = (event) => {
+    const tournamentIndex = tournamentChoices.findIndex(
+      (tournament) => tournament.gameName === event.target.value
+    );
+    const playerObjects = tournamentChoices[tournamentIndex].participants.map(
+      (playerName, i) => {
+        return {
+          name: playerName,
+          position: i,
+          round: 0,
+          originalPosition: i,
+        };
+      }
     );
     setPlayers(playerObjects);
-
+    setGameName(tournamentChoices[tournamentIndex].gameName);
+    setTournamentChoices([]);
   };
-  useEffect(() => {
-    fetchPlayers();
-  }, []);
+  // useEffect(() => {
+  //   fetchPlayers();
+  // }, []);
 
-  const [winner, setWinner] = useState("");
-  const [players, setPlayers] = useState([]);
   let numberOfPlayers = players.length;
   let numberOfRounds = Math.log2(numberOfPlayers);
   let rounds = [];
@@ -92,10 +111,20 @@ function TournamentBracket() {
       />
     );
   }
+  const selectTournament = tournamentChoices.length ? (
+    <select onChange={handleChooseTournament} >
+      <option >Choose a tournament</option>
+      {tournamentChoices.map((tournament) => {
+        return <option>{tournament.gameName}</option>;
+      })}
+    </select>
+  ) : (
+    undefined
+  );
 
   return (
     <div>
-      <p>Tournament</p>
+      <h1 className='my-4 text-primary'>{gameName}</h1>
       {/* <ButtonGroup variant="contained">
         <Button>remake tournament</Button>
         <Button color="error">clear tournament</Button>
@@ -119,11 +148,17 @@ function TournamentBracket() {
       ) : (
         <div></div>
       )}
-      
-      <TournamentForm setPlayers={setPlayers} />
+
+      {selectTournament ||
+      <TournamentForm
+        setPlayers={setPlayers}
+        setGameName={setGameName}
+        fetchTournament={fetchTournament}
+        setTournamentChoices={setTournamentChoices}
+      />
+      }
     </div>
   );
 }
 
 export default TournamentBracket;
-
