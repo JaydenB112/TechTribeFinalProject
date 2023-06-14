@@ -1,12 +1,4 @@
 import CompetitorPosition from "./CompetitorPosition";
-// import {
-//   Button,
-//   Card,
-//   CardActions,
-//   CardContent,
-//   List,
-//   ListItem,
-// } from "@mui/material";
 
 function Match({players, round, position, advancePlayer, retreatPlayer}) {
   let pos1 = position * 2;
@@ -14,6 +6,9 @@ function Match({players, round, position, advancePlayer, retreatPlayer}) {
 
   let player1 = players.find((player) => player.position === pos1 && player.round === round)?.name || '';
   let player2 = players.find((player) => player.position === pos2 && player.round === round)?.name || '';
+  
+  console.log(player1,position,round);
+
   return (
 
     <div className='mb-4'>
