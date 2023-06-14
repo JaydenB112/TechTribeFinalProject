@@ -8,22 +8,14 @@ function MyTournaments() {
             <div className="p_TournAlign">
                 <div className="createdTourn_Name">
                     <ul className="myTourn_ListA">
-                    <li className="p_TournData"> myData_Name </li>
-                    <li className="p_TournData"> myData_Name </li>
-                    <li className="p_TournData"> myData_Name </li>
-                    <li className="p_TournData"> myData_Name </li>
-                    <li className="p_TournData"> myData_Name </li>
+                    <p className="p_TournData1"> myData_Name </p>
+                    <p className="p_TournData2"> myData_Name </p>
+                    <p className="p_TournData1"> myData_Name </p>
+                    <p className="p_TournData2"> myData_Name </p>
+                    <p className="p_TournData1"> myData_Name </p>
                     </ul>
                     </div>
-                <div className="createdTourn_Date">
-                    <ul className="myTourn_ListB">
-                    <li className="p_TournData"> myData_Date </li>
-                    <li className="p_TournData"> myData_Date </li>
-                    <li className="p_TournData"> myData_Date </li>
-                    <li className="p_TournData"> myData_Date </li>
-                    <li className="p_TournData"> myData_Date </li>
-                    </ul>
-                    </div>
+                    
             </div>
 
         </div>

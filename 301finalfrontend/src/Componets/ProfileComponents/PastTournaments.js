@@ -6,23 +6,14 @@ function PastTournaments() {
             <div className="p_TournAlign">
                 <div className="pastTourn_Name">
                     <ul className="pastTourn_ListA">
-                    <li className="p_TournData"> pastData_Name </li>
-                    <li className="p_TournData"> pastData_Name </li>
-                    <li className="p_TournData"> pastData_Name </li>
-                    <li className="p_TournData"> pastData_Name </li>
-                    <li className="p_TournData"> pastData_Name </li>
+                    <p className="p_TournData1"> pastData_Name </p>
+                    <p className="p_TournData2"> pastData_Name </p>
+                    <p className="p_TournData1"> pastData_Name </p>
+                    <p className="p_TournData2"> pastData_Name </p>
+                    <p className="p_TournData1"> pastData_Name </p>
 
                     </ul>
                     </div>
-                <div className="pastTourn_Date">
-                   <ul className="pastTourn_ListB">
-                   <li className="p_TournData"> pastData_Date </li>
-                    <li className="p_TournData"> pastData_Date </li>
-                    <li className="p_TournData"> pastData_Date </li>
-                    <li className="p_TournData"> pastData_Date </li>
-                    <li className="p_TournData"> pastData_Date </li>
-                   </ul>
-                   </div>
             </div>
 
         </div>
