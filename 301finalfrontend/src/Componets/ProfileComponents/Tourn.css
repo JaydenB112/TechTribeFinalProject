@@ -1,0 +1,90 @@
+/* this section is for My Tournaments */
+.createdTournContainer {
+    border: 3px solid rgb(42, 55, 197);
+    margin: 10px;
+}
+
+.myTourn_ListA,
+.myTourn_ListB {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.myTourn_ListA {
+    margin-right: 20px;
+}
+
+/* this section is for Upcoming Tournaments */
+.upcomingTournContainer {
+    border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.p_TournAlign {
+    display: flex;
+    justify-content: center;
+}
+
+.upcomingTourn_Container {
+    display: flex;
+}
+
+.upcomingTourn_ListA,
+.upcomingTourn_ListB {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 22px; /* Increase the font size for list items */
+}
+
+.upcomingTourn_ListA {
+    margin-right: 20px;
+}
+
+.p_TournData {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* this section is for Past Tournaments */
+.pastTournContainer{
+    border: 3px solid rgb(40, 157, 30);
+    margin: 10px;
+}
+
+
+.pastTourn_Container {
+    display: flex;
+}
+
+.pastTourn_ListA,
+.pastTourn_ListB {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 22px; /* Increase the font size for list items */
+}
+
+.pastTourn_ListA {
+    margin-right: 20px;
+}
+
+
+/* Tourn.css */
+.myTourn_ListA,
+.myTourn_ListB {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 22px; /* Increase the font size for list items */
+
+}
+
+.myTourn_ListA {
+    margin-right: 20px;
+}
