@@ -1,12 +1,32 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Winner from "./Winner";
 import TournamentForm from "./TournamentForm";
 import Rounds from "./Brack/Rounds";
-
 import { Container, Col, Row } from "react-bootstrap";
 
 function TournamentBracket() {
+  // make fetch request to get all players
+  const fetchPlayers = async () => {
+    const res = await fetch("https://ttbackend-29bg.onrender.com/boards");
+    console.log(res);
+    const data = await res.json();
+    const playerObjects = data[1].participants.map((playerName, i) => {
+      return {
+        name: playerName,
+        position: i,
+        round: 0,
+        originalPosition: i,
+      };
+    }
+    );
+    setPlayers(playerObjects);
+
+  };
+  useEffect(() => {
+    fetchPlayers();
+  }, []);
+
   const [winner, setWinner] = useState("");
   const [players, setPlayers] = useState([]);
   let numberOfPlayers = players.length;
