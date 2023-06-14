@@ -1,16 +1,25 @@
 import "./User.css"; // Import the CSS file
+import { useAuth0 } from "@auth0/auth0-react";
 
+const UserProfile = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
-function UserProfile() {
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   return (
-    <div>
-      {/* HTML CODE GOES IN HERE :> -KD */}
-      <img className="userPFP" src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg" alt="" />
-      <h2 className="auth0_Username">
-        @Username
-      </h2>
-    </div>
+    isAuthenticated && (
+      <div>
+        <div className="userPFP-container">
+          <img className="userPFP" src={user.picture} alt={user.name} />
+        </div>
+        <h2 className="auth0_Username">
+          {user.name}
+        </h2>
+      </div>
+    )
   );
-}
+};
 
 export default UserProfile;
