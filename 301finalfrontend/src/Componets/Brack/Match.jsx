@@ -1,12 +1,5 @@
 import CompetitorPosition from "./CompetitorPosition";
-// import {
-//   Button,
-//   Card,
-//   CardActions,
-//   CardContent,
-//   List,
-//   ListItem,
-// } from "@mui/material";
+
 
 function Match({players, round, position, advancePlayer, retreatPlayer}) {
   let pos1 = position * 2;
@@ -14,6 +7,7 @@ function Match({players, round, position, advancePlayer, retreatPlayer}) {
 
   let player1 = players.find((player) => player.position === pos1 && player.round === round)?.name || '';
   let player2 = players.find((player) => player.position === pos2 && player.round === round)?.name || '';
+
   return (
     // <>
     //   <Card sx={{ display: "inline-block", mx: "2px" }} variant="outlined">
@@ -39,3 +33,38 @@ function Match({players, round, position, advancePlayer, retreatPlayer}) {
 }
 
 export default Match;
+
+// import CompetitorPosition from "./CompetitorPosition";
+// import {
+//   Button,
+//   Card,
+//   CardActions,
+//   CardContent,
+//   List,
+//   ListItem,
+// } from "@mui/material";
+
+// function Match(tournamentList) {
+//   return (
+//     <>
+//       <Card sx={{ display: "inline-block", mx: "2px" }} variant="outlined">
+//         <CardContent>
+//           <List>
+//             <ListItem>
+//               <CompetitorPosition tournamentList={tournamentList} />
+//             </ListItem>
+//             <ListItem>
+//               <CompetitorPosition tournamentList={tournamentList} />
+//             </ListItem>
+//           </List>
+//         </CardContent>
+//         <Button variant="contained">end match</Button>
+//         <CardActions></CardActions>
+//       </Card>
+//     </>
+//   );
+// }
+
+// export default Match;
+
+
