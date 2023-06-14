@@ -11,7 +11,7 @@ import {
 // import BrackDisplay from "./BracketDisplay";
 
 
-function TournamentForm({setPlayers}) {
+function TournamentForm({setPlayers, setGameName, fetchTournament, setTournamentChoices}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tournamentName, setTournamentName] = useState("");
   const [maxCompetitors, setMaxCompetitors] = useState("");
@@ -19,7 +19,12 @@ function TournamentForm({setPlayers}) {
   const [competitorsList, setCompetitorsList] = useState([]);
   const [submittedData, setSubmittedData] = useState(null);
 
-
+  const handleGetTournaments = async () => {
+    const res = await fetch("https://ttbackend-29bg.onrender.com/boards");
+    const data = await res.json();
+    console.log(data)
+    setTournamentChoices(data);
+  };
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -42,6 +47,7 @@ function TournamentForm({setPlayers}) {
     setSubmittedData(data);
     handleCloseModal();
     setPlayers(newPlayerList)
+    setGameName(tournamentName)
   };
   
   const handleAddCompetitor = () => {
@@ -65,8 +71,12 @@ function TournamentForm({setPlayers}) {
 
   return (
     <>
-      <Button variant="contained" color="success" onClick={handleOpenModal}>
+      <Button className="mx-4" variant="contained" color="success" onClick={handleOpenModal}>
         make tournament
+      </Button>
+
+      <Button variant="contained" color="success" onClick={handleGetTournaments}>
+        get tournament
       </Button>
 
       <Modal open={isModalOpen} onClose={handleCloseModal}>
@@ -119,15 +129,6 @@ function TournamentForm({setPlayers}) {
               <ol className="scrollable-list">
                 <h3>Tournament Roster</h3>
                 {competitorsList.map((name, index) => (
-                  <li key={index}>{name}</li>
-                ))}
-              </ol>
-            </div>
-            <br />
-            <div className="list-container">
-              <ol className="scrollable-list">
-                <h3>Roster Competitor Replacement</h3>
-                {replacementList.map((name, index) => (
                   <li key={index}>{name}</li>
                 ))}
               </ol>
