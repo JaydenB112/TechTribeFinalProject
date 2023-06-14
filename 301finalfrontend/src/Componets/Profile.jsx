@@ -1,6 +1,5 @@
 import UserProfile from "./ProfileComponents/UserProfile";
 import MyTournaments from "./ProfileComponents/MyTournaments";
-import UpComingTournaments from "./ProfileComponents/UpcomingTournaments";
 import PastTournaments from "./ProfileComponents/PastTournaments";
 import "./Profile.css"; // Import the CSS file
 
@@ -15,8 +14,6 @@ function Profile() {
       <div className="white-box">
         {/* Component for My Tournament */}
         <MyTournaments></MyTournaments>
-        {/* Component for Upcoming Tournament */}
-        <UpComingTournaments></UpComingTournaments>
         {/* Component for Past Tournament */}
         <PastTournaments></PastTournaments>
       </div>

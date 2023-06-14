@@ -1,90 +1,75 @@
-/* this section is for My Tournaments */
+/* My Tournaments */
 .createdTournContainer {
     border: 3px solid rgb(42, 55, 197);
     margin: 10px;
-}
-
-.myTourn_ListA,
-.myTourn_ListB {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.myTourn_ListA {
-    margin-right: 20px;
-}
-
-/* this section is for Upcoming Tournaments */
-.upcomingTournContainer {
-    border: 3px solid red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 10px;
-}
-
-.p_TournAlign {
     display: flex;
     justify-content: center;
-}
-
-.upcomingTourn_Container {
-    display: flex;
-}
-
-.upcomingTourn_ListA,
-.upcomingTourn_ListB {
+  }
+  
+  .myTourn_ListA,
+  .myTourn_ListB {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    font-size: 22px; /* Increase the font size for list items */
-}
-
-.upcomingTourn_ListA {
+  }
+  
+  .myTourn_ListA {
     margin-right: 20px;
-}
-
-.p_TournData {
+  }
+  
+  .p_TournAlign {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .p_TournData {
     margin-right: 10px;
     margin-bottom: 10px;
-}
-
-/* this section is for Past Tournaments */
-.pastTournContainer{
+  }
+  
+  /* Past Tournaments */
+  .pastTournContainer {
     border: 3px solid rgb(40, 157, 30);
     margin: 10px;
-}
-
-
-.pastTourn_Container {
     display: flex;
-}
-
-.pastTourn_ListA,
-.pastTourn_ListB {
+    justify-content: center;
+  }
+  
+  .pastTourn_Container {
+    display: flex;
+  }
+  
+  .pastTourn_ListA,
+  .pastTourn_ListB {
     list-style-type: none;
     padding: 0;
     margin: 0;
     font-size: 22px; /* Increase the font size for list items */
-}
-
-.pastTourn_ListA {
+  }
+  
+  .pastTourn_ListA {
     margin-right: 20px;
-}
-
-
-/* Tourn.css */
-.myTourn_ListA,
-.myTourn_ListB {
+  }
+  
+  /* Tourn.css */
+  .myTourn_ListA,
+  .myTourn_ListB {
     list-style-type: none;
     padding: 0;
     margin: 0;
     font-size: 22px; /* Increase the font size for list items */
-
-}
-
-.myTourn_ListA {
+  }
+  
+  .myTourn_ListA {
     margin-right: 20px;
-}
+  }
+  
+  .p_TournData1 {
+    background-color: rgb(192, 192, 210);
+    padding: 10px; /* Add extra space on the sides */
+    padding-left: 70px;
+    padding-right: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
