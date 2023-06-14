@@ -11,6 +11,7 @@ function PastTournaments() {
                     <li className="p_TournData"> pastData_Name </li>
                     <li className="p_TournData"> pastData_Name </li>
                     <li className="p_TournData"> pastData_Name </li>
+
                     </ul>
                     </div>
                 <div className="pastTourn_Date">
