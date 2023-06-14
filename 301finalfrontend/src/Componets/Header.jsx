@@ -1,21 +1,22 @@
-import {  Button,ButtonGroup  } from "@mui/material";
+import { Button, ButtonGroup } from "@mui/material";
 import { Link } from "react-router-dom";
+import './Header.css'; // Import the CSS file
 
 function Header() {
   return (
     <>
       <nav>
-    <h1>Tournament Bracket Maker</h1>
+        <h1 className="font-unbounded">Tournament Bracket Maker</h1>
         <ButtonGroup>
-        <Button>
-          <Link to="/" className="nav-link">Home</Link>
-        </Button>
-        <Button>
-          <Link to="/tournament-bracket" className="nav-link">Tournament Bracket</Link>
-        </Button>
-        <Button>
-          <Link to="/profile" className="nav-link">Profile</Link>
-        </Button>
+          <Button>
+            <Link to="/" className="nav-link">Home</Link>
+          </Button>
+          <Button>
+            <Link to="/tournament-bracket" className="nav-link">Tournament Bracket</Link>
+          </Button>
+          <Button>
+            <Link to="/profile" className="nav-link">Profile</Link>
+          </Button>
         </ButtonGroup>
       </nav>
     </>

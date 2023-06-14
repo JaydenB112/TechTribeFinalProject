@@ -1,17 +1,49 @@
-.createdTournContainer{
-  border: 3px;
-  border-style: solid;
-  border-color: rgb(42, 55, 197);
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* .upcomingTournContainer{
-  border: 3px;
-  border-style: solid;
-  border-color: red;
-} */
+.profile-row {
+  display: flex;
+  align-items: center; /* Align items vertically in the middle */
+}
 
-.pastTournContainer{
-  border: 3px;
-  border-style: solid;
-  border-color: rgb(40, 157, 30);
+.profile-row > * {
+  margin-right: 20px; /* Add some spacing between the components */
+}
+
+body {
+  background: linear-gradient(to bottom, #000000, #708090);
+  background-attachment: fixed;
+}
+
+.white-box {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.white-box > * {
+  display: inline-block; /* Make the child elements inline */
+  margin-right: 20px; /* Add some spacing between the child elements */
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.white-box {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.white-box + .white-box {
+  margin-left: 30px; /* Add margin to the left of the second white box */
 }

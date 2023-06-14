@@ -7,18 +7,21 @@ import "./Profile.css"; // Import the CSS file
 function Profile() {
   return (
     <div className="profile-container">
-      <p>profile</p>
-      {/* Import all the cool KD components here :) */}
-      {/* Component for UserProfile */}
-      <UserProfile></UserProfile>
-      {/* Component for My Tournament */}
-      <MyTournaments></MyTournaments>
-      {/* Component for Upcoming Tournament */}
-      <UpComingTournaments></UpComingTournaments>
-      {/* Component for Past Tournament */}
-      <PastTournaments></PastTournaments>
+      <div className="white-box">
+        {/* Component for UserProfile */}
+        <UserProfile></UserProfile>
+      </div>
+      <div className="white-box">
+        {/* Component for My Tournament */}
+        <MyTournaments></MyTournaments>
+        {/* Component for Upcoming Tournament */}
+        <UpComingTournaments></UpComingTournaments>
+        {/* Component for Past Tournament */}
+        <PastTournaments></PastTournaments>
+      </div>
     </div>
   );
 }
+
 
 export default Profile;
