@@ -4,6 +4,7 @@ import UpComingTournaments from "./ProfileComponents/UpcomingTournaments";
 import PastTournaments from "./ProfileComponents/PastTournaments";
 import "./Profile.css"; // Import the CSS file
 
+
 function Profile() {
   return (
     <div className="profile-container">
